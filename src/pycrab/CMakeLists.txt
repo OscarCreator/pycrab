@@ -1,2 +1,4 @@
-
-# build python api
+set(SRC_PYCRAB
+    ${CMAKE_CURRENT_SOURCE_DIR}/pycrab.pyx
+    PARENT_SCOPE
+)
