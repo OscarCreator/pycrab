@@ -10,8 +10,8 @@ add_subdirectory(src/crab)
 
 #get_filename_component(name src/pycrab/pycrab.pyx NAME_WE)
 add_custom_command(
-    OUTPUT src/pycrab/pycrab.c
-    COMMAND ${Python3_EXECUTABLE} -m cython -3 src/pycrab/pycrab.pyx
+    OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/src/pycrab/pycrab.c
+    COMMAND ${Python3_EXECUTABLE} -m cython -3 ${CMAKE_CURRENT_SOURCE_DIR}/src/pycrab/pycrab.pyx
     DEPENDS src/pycrab/pycrab.pyx
 )
 list(APPEND PY_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/pycrab/pycrab.c)
