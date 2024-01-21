@@ -10,11 +10,11 @@ add_subdirectory(src/crab)
 
 #get_filename_component(name src/pycrab/pycrab.pyx NAME_WE)
 add_custom_command(
-    OUTPUT /home/ospers/personal/pycrab/src/pycrab/pycrab.c
-    COMMAND ${Python3_EXECUTABLE} -m cython -3 /home/ospers/personal/pycrab/src/pycrab/pycrab.pyx
+    OUTPUT src/pycrab/pycrab.c
+    COMMAND ${Python3_EXECUTABLE} -m cython -3 src/pycrab/pycrab.pyx
     DEPENDS src/pycrab/pycrab.pyx
 )
-list(APPEND PY_SOURCES /home/ospers/personal/pycrab/src/pycrab/pycrab.c)
+list(APPEND PY_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/pycrab/pycrab.c)
 
 message(STATUS "srces: ${SOURCES}, ${PY_SOURCES}, ${HEADERS_CRAB}")
 add_library(pycrab SHARED 
